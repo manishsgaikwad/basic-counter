@@ -27,7 +27,16 @@
     margin-left: -150px;
     margin-top: -150px;
  }
- 
+ .btn { 
+            box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+            cursor: pointer; 
+            outline: none; 
+            transition: 0.2s all; 
+        }           
+        .btn:active { 
+            transform: scale(0.98); 
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+        } 
  </style>
     <script>
         var app = angular.module('counterApp',[]);
@@ -37,6 +46,7 @@
             $scope.increamentCount = function() {
                 $scope.count = $scope.count + 1;
                 $('.odometer').html($scope.count)
+                window.navigator.vibrate(200);
             }
             $scope.reset = function() {
             $scope.count = 0;
