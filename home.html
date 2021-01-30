@@ -1,17 +1,30 @@
 <html>
-<title>Counter</title>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<body>
-<div  ng-app="counterApp" ng-controller="counterController">
-    <button ng-click="counter = counter + 1">Click</button>
-    <button ng-click="counter = 0">Reset</button>
-    <p>{{counter}}</p>
+    <title>Counter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <body ng-app="counterApp" ng-controller="counterController" style="background-image: url({{imgURL}});">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="container text-center">
+                <button class="btn btn-primary btn-lg" style='margin-right:16px' ng-click="counter = counter + 1">Click</button> 
+                <button class="btn btn-secondary btn-lg" style='margin-right:16px' ng-click="counter = 0">Reset</button>
+                <br>
+                <b style="font-size: xx-large; color: coral;">{{counter}}</b>
+            </div>
+        </div>
+    </body>
+    <style>
+        body,html {
+  height: 100%;
+}
+    </style>
     <script>
         var app = angular.module('counterApp',[]);
         app.controller('counterController',function($scope){
             $scope.count = 0;
+            $scope.imgURL = "https://picsum.photos/seed/"+ Math.round(Math.random()*100)+"/"+window.innerWidth+"/"+window.innerHeight+"/?blur=2";
         });
     </script>
-</div>
-</body>
 </html>
