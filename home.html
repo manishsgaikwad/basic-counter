@@ -1,4 +1,7 @@
 <html>
+    <meta name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0' >
     <title>Counter</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,10 +13,10 @@
     <body ng-app="counterApp" ng-controller="counterController" style="background-image: url({{imgURL}});">
         <div class="lolwa">
             <div class="container text-center">
-                <button class="btn btn-outline-success btn-lg" style='font-size: 80px; border-radius: 25px;' ng-click="increamentCount()">Count</button> 
-                <br>
-                <br>
                 <b class="odometer" style="font-size: 3cm; color: coral; padding: 16px;"></b>
+                <br>
+                <br>
+                <button class="btn btn-outline-success btn-lg" style='font-size: 80px; border-radius: 25px;' ng-click="increamentCount()">Count</button>
             </div>
         </div>
         <button class="btn btn-outline-secondary btn-lg" style='margin-bottom:16px; margin-right: 16px; position: absolute; bottom: 0;right:0;' ng-click="reset()">Reset</button>
